@@ -1,9 +1,9 @@
-#include<stdio.h>
-#include<conio.h>
-#include<stdlib.h>
-#include<ctype.h>
-#include<string.h>
-//#include<conio2.h>
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+// #include<conio2.h>
 
 #define TF 20
 
@@ -20,36 +20,57 @@ struct TpProduto
 	TpData DtValidade;
 };
 
+void DeleteProd(TpProduto Tab[TF], int &TL)
+{
+	int cod, i;
+	printf("\nDigite o codigo do produto que deseja excluir: ");
+	fflush(stdin);
+	scanf("%d", &cod);
+	for (i = TL - 1; i >= 0 && Tab[i].Codigo!=cod; --i);
+	if (i > 0)
+	{
+		for (; i < TL - 1; i++)
+		{
+			Tab[i] = Tab[i + 1];
+		}
+		TL--;
+		printf("Produto encontrado e Excluido com sucesso\n");
+	}
+	else
+		printf("Erro! Produto nao encontrado!\n");
+	getch();
+}
+
 void OrdenarDescr(TpProduto Tab[TF], int TL)
 {
-	int i,j;
+	int i, j;
 	TpProduto RegAux;
-	
-	if (TL==0)
+
+	if (TL == 0)
 		printf("\nNão há Produtos Cadastrados!\n");
 	else
-		{
-			for(i=0; i<TL-1; i++)
-				for(j=i+1; j<TL; j++)
-					if(stricmp(Tab[i].Descr,Tab[j].Descr)>0)
-					{
-						RegAux = Tab[i];
-						Tab[i] = Tab[j];
-						Tab[j] = RegAux;
-					}
-			
-			printf("\nTabela de Produtos Ordenada pela Descricao!\n");
-		}
+	{
+		for (i = 0; i < TL - 1; i++)
+			for (j = i + 1; j < TL; j++)
+				if (stricmp(Tab[i].Descr, Tab[j].Descr) > 0)
+				{
+					RegAux = Tab[i];
+					Tab[i] = Tab[j];
+					Tab[j] = RegAux;
+				}
+
+		printf("\nTabela de Produtos Ordenada pela Descricao!\n");
+	}
 	getch();
 }
 
 int BuscaCodProd(TpProduto Tab[TF], int TL, int Codigo)
 {
-	int i=0;
-	while (i<TL && Codigo!=Tab[i].Codigo)
-			i++;
-	
-	if (i<TL)
+	int i = 0;
+	while (i < TL && Codigo != Tab[i].Codigo)
+		i++;
+
+	if (i < TL)
 		return i;
 	else
 		return -1;
@@ -58,13 +79,13 @@ int BuscaCodProd(TpProduto Tab[TF], int TL, int Codigo)
 void CADProd(TpProduto Tab[TF], int &TL)
 {
 	int AuxCod, pos;
-	//clrscr();
+	// clrscr();
 	printf("\n# # #  Cadastro de Produtos  # # #\n");
 	printf("Codigo: ");
-	scanf("%d",&AuxCod);
-	while (TL<TF && AuxCod>0)
+	scanf("%d", &AuxCod);
+	while (TL < TF && AuxCod > 0)
 	{
-		pos = BuscaCodProd(Tab,TL,AuxCod);
+		pos = BuscaCodProd(Tab, TL, AuxCod);
 		if (pos == -1)
 		{
 			Tab[TL].Codigo = AuxCod;
@@ -72,47 +93,47 @@ void CADProd(TpProduto Tab[TF], int &TL)
 			fflush(stdin);
 			gets(Tab[TL].Descr);
 			printf("Estoque: ");
-			scanf("%d",&Tab[TL].Estoque);
+			scanf("%d", &Tab[TL].Estoque);
 			printf("Preco: R$ ");
-			scanf("%f",&Tab[TL].Preco);
+			scanf("%f", &Tab[TL].Preco);
 			printf("Data de Validade [dd mm aaaa]: ");
-			scanf("%d %d %d",&Tab[TL].DtValidade.Dia, &Tab[TL].DtValidade.Mes, &Tab[TL].DtValidade.Ano);
+			scanf("%d %d %d", &Tab[TL].DtValidade.Dia, &Tab[TL].DtValidade.Mes, &Tab[TL].DtValidade.Ano);
 			TL++;
 		}
 		else
-			{
-				printf("\nCodigo do Produto ja Cadastrado!\n");
-				getch();
-			}
-					
+		{
+			printf("\nCodigo do Produto ja Cadastrado!\n");
+			getch();
+		}
+
 		printf("\nCodigo: ");
-		scanf("%d",&AuxCod);
+		scanf("%d", &AuxCod);
 	}
 }
 
 void RELProd(TpProduto Tab[TF], int TL)
 {
 	int i;
-	//clrscr();
+	// clrscr();
 	printf("\n# # #  Relatorio de Produtos  # # #\n");
-	if (TL==0)
+	if (TL == 0)
 		printf("\nNao ha Produtos Cadastrados!\n");
 	else
-			for(i=0; i<TL; i++)
-			{
-				printf("\nCodigo: %d\n",Tab[i].Codigo);
-				printf("Descricao: %s\n",Tab[i].Descr);
-				printf("Estoque: %d\n",Tab[i].Estoque);
-				printf("Preco: R$ %.2f\n",Tab[i].Preco);
-				printf("Data de Validade: %d/%d/%d\n",Tab[i].DtValidade.Dia, Tab[i].DtValidade.Mes, Tab[i].DtValidade.Ano);
-			}
-		
+		for (i = 0; i < TL; i++)
+		{
+			printf("\nCodigo: %d\n", Tab[i].Codigo);
+			printf("Descricao: %s\n", Tab[i].Descr);
+			printf("Estoque: %d\n", Tab[i].Estoque);
+			printf("Preco: R$ %.2f\n", Tab[i].Preco);
+			printf("Data de Validade: %d/%d/%d\n", Tab[i].DtValidade.Dia, Tab[i].DtValidade.Mes, Tab[i].DtValidade.Ano);
+		}
+
 	getch();
 }
 
 char Menu(void)
 {
-	//clrscr();
+	// clrscr();
 	printf("\n# # #  M E N U  # # #\n");
 	printf("\n[A] Cadastrar Produtos");
 	printf("\n[B] Relatorio de Produtos");
@@ -128,68 +149,71 @@ char Menu(void)
 	return toupper(getche());
 }
 
-
 void InserirDados(TpProduto TabProd[TF], int &TLP)
 {
 	TabProd[TLP].Codigo = 5000;
-	strcpy(TabProd[TLP].Descr,"Arroz");
+	strcpy(TabProd[TLP].Descr, "Arroz");
 	TabProd[TLP].Estoque = 20;
 	TabProd[TLP].Preco = 25;
 	TabProd[TLP].DtValidade.Dia = 15;
 	TabProd[TLP].DtValidade.Mes = 8;
 	TabProd[TLP].DtValidade.Ano = 2025;
 	TLP++;
-	
+
 	TabProd[TLP].Codigo = 9000;
-	strcpy(TabProd[TLP].Descr,"Feijao");
+	strcpy(TabProd[TLP].Descr, "Feijao");
 	TabProd[TLP].Estoque = 15;
 	TabProd[TLP].Preco = 10.56;
 	TabProd[TLP].DtValidade.Dia = 18;
 	TabProd[TLP].DtValidade.Mes = 11;
 	TabProd[TLP].DtValidade.Ano = 2024;
 	TLP++;
-	
+
 	TabProd[TLP].Codigo = 7000;
-	strcpy(TabProd[TLP].Descr,"Leite");
+	strcpy(TabProd[TLP].Descr, "Leite");
 	TabProd[TLP].Estoque = 150;
 	TabProd[TLP].Preco = 3.99;
 	TabProd[TLP].DtValidade.Dia = 23;
 	TabProd[TLP].DtValidade.Mes = 10;
 	TabProd[TLP].DtValidade.Ano = 2023;
 	TLP++;
-	
+
 	printf("\n*** Dados inseridos! ***\n");
 	getch();
 }
-
 
 int main(void)
 {
 	char opcao;
 	TpProduto Produtos[TF];
-	int TLP=0;
-	
+	int TLP = 0;
+
 	do
 	{
 		opcao = Menu();
-		switch(opcao)
+		switch (opcao)
 		{
-			case 'A': CADProd(Produtos,TLP);
-					  break;
-					  
-			case 'B': RELProd(Produtos,TLP);
-					  break;
-					  
-			case 'C': OrdenarDescr(Produtos,TLP);
-					  break;
-			
-			case 'D': 
-					  break;
-					  
-			case 'I': InserirDados(Produtos,TLP);
-					  break;
+		case 'A':
+			CADProd(Produtos, TLP);
+			break;
+
+		case 'B':
+			RELProd(Produtos, TLP);
+			break;
+
+		case 'C':
+			OrdenarDescr(Produtos, TLP);
+			break;
+
+		case 'D':
+			DeleteProd(Produtos, TLP);
+			break;
+
+		case 'I':
+			InserirDados(Produtos, TLP);
+			break;
 		}
-	}while(opcao!=27);
-	
+	} while (opcao != 27);
+
 	return 0;
 }
