@@ -20,24 +20,55 @@ struct TpProduto
 	TpData DtValidade;
 };
 
+int BuscaCodProd(TpProduto Tab[TF], int TL, int Codigo)
+{
+	int i = 0;
+	while (i < TL && Codigo != Tab[i].Codigo)
+		i++;
+
+	return i < TL ? i : -1;
+}
+
+void VenderProd(TpProduto Tab[TF], int TL)
+{
+	int i, cod;
+	printf("\nDigite o codigo do produto: ");
+	fflush(stdin);
+	scanf("%d", &cod);
+	i = BuscaCodProd(Tab, TL, cod);
+	if (i != -1)
+	{
+		if (Tab[i].Estoque == 0)
+			printf("\nProduto sem estoque!\n");
+		else
+		{
+			Tab[i].Estoque--;
+			printf("\nProduto Vendido! \n");
+		}
+	}
+	else
+		puts("\nCodigo invalido!");
+	getch();
+}
+
 void DeleteProd(TpProduto Tab[TF], int &TL)
 {
 	int cod, i;
 	printf("\nDigite o codigo do produto que deseja excluir: ");
 	fflush(stdin);
 	scanf("%d", &cod);
-	for (i = TL - 1; i >= 0 && Tab[i].Codigo!=cod; --i);
-	if (i > 0)
+	i = BuscaCodProd(Tab, TL, cod);
+	if (i != -1)
 	{
 		for (; i < TL - 1; i++)
 		{
 			Tab[i] = Tab[i + 1];
 		}
 		TL--;
-		printf("Produto encontrado e Excluido com sucesso\n");
+		printf("\nProduto encontrado e Excluido com sucesso\n");
 	}
 	else
-		printf("Erro! Produto nao encontrado!\n");
+		printf("\nErro! Produto nao encontrado!\n");
 	getch();
 }
 
@@ -62,18 +93,6 @@ void OrdenarDescr(TpProduto Tab[TF], int TL)
 		printf("\nTabela de Produtos Ordenada pela Descricao!\n");
 	}
 	getch();
-}
-
-int BuscaCodProd(TpProduto Tab[TF], int TL, int Codigo)
-{
-	int i = 0;
-	while (i < TL && Codigo != Tab[i].Codigo)
-		i++;
-
-	if (i < TL)
-		return i;
-	else
-		return -1;
 }
 
 void CADProd(TpProduto Tab[TF], int &TL)
@@ -207,6 +226,10 @@ int main(void)
 
 		case 'D':
 			DeleteProd(Produtos, TLP);
+			break;
+
+		case 'E':
+			VenderProd(Produtos, TLP);
 			break;
 
 		case 'I':
