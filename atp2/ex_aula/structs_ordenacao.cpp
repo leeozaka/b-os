@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<ctype.h>
 #include<string.h>
-#include<conio2.h>
+//#include<conio2.h>
 
 #define TF 20
 
@@ -26,11 +26,11 @@ void OrdenarDescr(TpProduto Tab[TF], int TL)
 	TpProduto RegAux;
 	
 	if (TL==0)
-		printf("\nN�o ha Produtos Cadastrados!\n");
+		printf("\nNão há Produtos Cadastrados!\n");
 	else
 		{
 			for(i=0; i<TL-1; i++)
-				for(j=i+1; i<TL; j++)
+				for(j=i+1; j<TL; j++)
 					if(stricmp(Tab[i].Descr,Tab[j].Descr)>0)
 					{
 						RegAux = Tab[i];
@@ -58,7 +58,7 @@ int BuscaCodProd(TpProduto Tab[TF], int TL, int Codigo)
 void CADProd(TpProduto Tab[TF], int &TL)
 {
 	int AuxCod, pos;
-	clrscr();
+	//clrscr();
 	printf("\n# # #  Cadastro de Produtos  # # #\n");
 	printf("Codigo: ");
 	scanf("%d",&AuxCod);
@@ -93,7 +93,7 @@ void CADProd(TpProduto Tab[TF], int &TL)
 void RELProd(TpProduto Tab[TF], int TL)
 {
 	int i;
-	clrscr();
+	//clrscr();
 	printf("\n# # #  Relatorio de Produtos  # # #\n");
 	if (TL==0)
 		printf("\nNao ha Produtos Cadastrados!\n");
@@ -112,7 +112,7 @@ void RELProd(TpProduto Tab[TF], int TL)
 
 char Menu(void)
 {
-	clrscr();
+	//clrscr();
 	printf("\n# # #  M E N U  # # #\n");
 	printf("\n[A] Cadastrar Produtos");
 	printf("\n[B] Relatorio de Produtos");
