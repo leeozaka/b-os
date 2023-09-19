@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio</title>
+    <style>
+        body {
+            font: normal 18pt Tahoma;
+            background-color:rgb(41, 41, 41)           
+        }
+        div#texto1{
+            margin-left: 100px;
+            text-align:center;
+            background-color:antiquewhite;
+            border-radius: 5%;
+            width: 200px;
+            height: 150px;
+        }
+        input{
+            margin-top: 20px;
+            font: normal 20px Tahoma;
+            width: 120px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="texto1"><h1>Olá mundo!</h1></div>
+    <input type="text" name="input1" id="input1">
+    <input type="text" name="input2" id="input2">
+    <input type="button" value="action" onclick="action()"></input>
+    <div id="answer">Resposta: </div>
+    <script>
+        var a = document.getElementById('input1')
+        var b = document.getElementById('input2')
+        function action()
+        {
+            answer.innerText = a.value +' '+ b.value
+        }
+
+    </script>
+</body>
+</html>

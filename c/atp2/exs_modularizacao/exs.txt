@@ -1,0 +1,19 @@
+Faça um módulo que ao ser passado como parâmetro um vetor contendo valores inteiros (máximo 100 elementos), retorne, via parâmetro, qual valor que aparece no vetor com maior freqüência e quantas vezes ele aparece.
+
+Faça uma função que ao serem passados como parâmetros um vetor (máximo 100 elementos) e o seu tamanho lógico, retorne a soma de seus elementos.
+
+Faça uma função que ao serem passados como parâmetros um vetor (máximo 100 elementos) e o seu tamanho lógico, retorne como resultado um valor lógico que informe se o valor está contido no vetor ou não.
+
+Faça uma função que ao ser passado como parâmetro um valor inteiro no sistema decimal retorne como resultado este mesmo valor transformado para a base binária.
+
+Passados como parâmetros 3 vetores com elementos quaisquer e seus respectivos tamanhos lógicos (TL), faça um módulo, para cada item abaixo: 
+
+Retorne no 3º vetor os elementos que estão no 1º vetor, mas não estão no 2º. Os elementos que irão compor o 3º vetor não devem ser repetidos, mas podem estar repetidos no 1º e no 2º (Subtração de Conjuntos);
+Retorne no 3º vetor os elementos que são comuns entre o 1º e o 2º vetor. Os elementos que irão compor o 3º vetor não devem ser repetidos, mas podem estar repetidos no 1º e no 2º (Intersecção de Conjuntos);
+Suponha que o 1º e o 2º vetor estão ordenados, retorne no 3º vetor todos os elementos do 1º e do 2º vetor, conservando a ordenação dos elementos no 3º vetor. A inserção de novos elementos no 3º vetor deve ser feita sempre pelo FIM e não pelo MEIO. O número de comparações para cada inserção deve ser mínimo. Esse processo de juntar duas listas ordenadas chama-se MERGE.
+
+Faça um módulo que ao receber como parâmetros dois vetores (máximo 100 elementos) e seus respectivos tamanhos lógicos, seja retornado via parâmetro a, união entre os elementos dos dois vetores. A união não pode conter elementos repetidos.
+
+Faça um módulo que ao receber um vetor com elementos inteiros positivos e o seu respectivo tamanho lógico, retorne no próprio vetor os elementos pares separados dos ímpares.
+
+Observação: Os tipos dos parâmetros deverão ser definidos de acordo com as necessidades estabelecidas nos enunciados.

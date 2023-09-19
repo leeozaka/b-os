@@ -1,0 +1,59 @@
+body {
+    background-color: rgb(6, 7, 10);
+    color: beige;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+div.block {
+    margin: 30px 30px 30px 30px;
+    background-color: rgb(32, 32, 32);
+    padding: 5% 5% 5% 5%;
+}
+ol.align {
+    list-style: lower-roman;
+    display: inline-block;
+    text-align: justify;
+}
+
+div.align#title {
+    font-weight: bold;
+}
+
+div.Unoeste {
+    outline: 1px solid beige;
+}
+
+div img.star {
+    width: 15px;
+}
+
+table#mainsheet{
+    border: 1px solid beige;
+    border-spacing: 1px;
+    width:100%;
+}
+tr,td{
+    border: 1px solid beige;
+    font-weight: bold;
+}
+tr,td:hover {
+    background-color: rgba(255, 255, 255, 0.315);
+    transition: 0.2s;
+}
+tr.gray{
+    background-color: rgba(0, 54, 124, 0.507);
+}
+tr.yellow {
+    background-color: blueviolet;
+}
+tr.green {
+    background-color: rgb(92, 11, 0);
+}
+div.ra {
+    color: black;
+    background-color: aqua;
+    text-align: left;
+}
+div.ra em {
+    margin-left: 10%;
+}

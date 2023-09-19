@@ -1,0 +1,52 @@
+*{
+    background-color: beige;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header{
+    padding-bottom: 10px;
+    width:auto;
+    text-align:center;
+    height: 50px;
+    background-color:green;
+    box-shadow: 1px 0px 17px  green;
+}
+
+body {
+    background-color: rgba(255, 255, 255, 0.336);
+}
+
+body h1#main {
+    padding-top: 10px;
+    text-transform:uppercase;
+    font:40px "Impact" serif;
+    background-color: green;
+}
+
+body div.paragraph{
+    text-align:left;
+    background-color:rgba(192, 192, 192, 0.418)
+}
+div.paragraph#conclusao {
+    letter-spacing: 1px;
+    box-shadow: 2px 2px 2px 2px green;
+}
+
+h2 {
+    background-color: rgba(0, 0, 0, 0.137);
+}
+h1 em {
+    font-size: 35px;
+    outline:auto;
+}
+h2#seo em  {
+    font-size: 25px;
+    outline:auto;
+}
+footer p{
+    font-style:italic;
+}
+footer div#ra {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px
+}

@@ -1,0 +1,1 @@
+Faça um programa que leia uma matriz 12x12 e calcule e escreva o menor elemento e a sua posicao (indices) da area hachurada, a media dos elementos da area hachurada

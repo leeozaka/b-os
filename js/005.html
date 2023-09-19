@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula DOM</title>
+    <style>
+        body {
+            background: #131313;
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bom dia DOM</h1>
+    <div id='holder'> DIV exemplo </div>
+    <p>Aprendendo a usar o <strong>DOM</strong>!!</p>
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[0] // elements by tagname e 
+        // ainda podem receber na variavel por id e nome declarando na div assim
+        var exmeplo = window.document.getElementById('holder')
+        // mas vejo mais sendo usado o query selector com formatacao css
+        var exemploQuery = document.querySelector('div#holder') // id = # class .
+        window.document.write(p1.innerText)
+
+        document.write(p1.innerHTML)
+    </script>    
+</body>
+</html>

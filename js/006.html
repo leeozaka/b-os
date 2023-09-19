@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#placeholder{
+            font: italic 28pt Arial; 
+            background: rgb(228, 62, 62);
+            color: rgb(0, 0, 0);
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+        body{
+            background-color: aliceblue;
+            font: normal 28pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <div id="placeholder"><strong>Aula 10</strong></div>
+    <script>
+        var a = document.querySelector('div#placeholder')
+        a.addEventListener('click', clique)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+        function clique(){
+            a.innerText = 'Clicou'
+            a.style.background = 'red'
+        }
+        function entrar()
+        {
+            a.innerText='Entrou'
+            a.style.background = 'blue'
+        }
+        function sair()
+        {
+            a.innerText='Saiu'
+            a.style.background = 'green'
+        }
+        var aula = document.querySelector('div#placeholder')
+        //document.write(`${aula.innerHTML}`)
+    </script>
+</body>
+</html>
