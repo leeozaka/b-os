@@ -124,7 +124,6 @@ void CADProd(TpProduto Tab[TF], int &TL)
 			printf("\nCodigo do Produto ja Cadastrado!\n");
 			getch();
 		}
-
 		printf("\nCodigo: ");
 		scanf("%d", &AuxCod);
 	}
@@ -146,7 +145,6 @@ void RELProd(TpProduto Tab[TF], int TL)
 			printf("Preco: R$ %.2f\n", Tab[i].Preco);
 			printf("Data de Validade: %d/%d/%d\n", Tab[i].DtValidade.Dia, Tab[i].DtValidade.Mes, Tab[i].DtValidade.Ano);
 		}
-
 	getch();
 }
 
