@@ -16,8 +16,7 @@ int main()
     while (i < run)
     {
         fflush(stdin);
-        // fgets(str, buffer, stdin);
-        scanf("%[^\n]\n", &str);
+        fgets(str, buffer, stdin);
         size = strlen(str) - 1;
 
         for (int index = 0; index <= size; ++index)
