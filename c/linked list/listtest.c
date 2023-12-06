@@ -32,7 +32,7 @@ Pessoa ler_pessoa() {
 
 // Operação push = empilhar
 No *push(No *topo) {
-    No *novo = malloc(sizeof(No));
+    No *novo = (No*)malloc(sizeof(No));
 
     if (novo) {
         novo->p = ler_pessoa();
@@ -46,6 +46,9 @@ No *push(No *topo) {
 
 int main() {
     No *topo = NULL;
+
+
+
     int opcao;
 
     do {
