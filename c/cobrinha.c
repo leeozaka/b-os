@@ -34,7 +34,7 @@ int main( )
     {
         for (j=0; j<size; j++)
         {
-            for (int tempo=1; tempo<100000000; tempo++);
+            for (int tempo=1; tempo<1000000; tempo++);
             if (matriz[i][j]==0) printf(" ");
             else printf("%c", black);
         }

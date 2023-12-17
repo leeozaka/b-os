@@ -11,7 +11,7 @@
                 "${file}",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",
-                "-lconio_64"
+                "-lc"
             ],
             "options": {
                 "cwd": "${fileDirname}"
