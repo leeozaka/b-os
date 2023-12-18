@@ -153,7 +153,6 @@ def inscricao():
                                 match novo_aluno.periodo:
                                     case 'NOTURNO':
                                         direito_noturno.inscritos += 1
-                                        direito_noturno.vagas -= 1
                                         match novo_aluno.sexo:
                                             case 'F':
                                                 direito_noturno.inscritos_fem += 1
@@ -224,7 +223,7 @@ def inscricao():
         os.system('pause')
 
 def readalunos():
-    with open('alunos.csv') as alunos:
+    with open('alunos.csv', 'r') as alunos:
         dados = csv.DictReader(alunos)
         dados.fieldnames = ['nome', 'sexo', 'cpf', 'curso', 'periodo']
         for row in dados:
@@ -334,21 +333,27 @@ def menu():
     print("[Z] SAIR")
 
 #evento de repeticao principal
-readalunos()
-op = str
-while op != 'Z':
-    menu()
-    op = str(input('\n\nOpção:')).upper()
+try:
+    readalunos()
+except:
+    open('alunos.csv', 'w')
+finally:
+    op = str
+    while op != 'Z':
+        menu()
+        op = str(input('\n\nOpção:')).upper()
 
-    match op:
-        case 'A':
-            inscricao()
-            os.system('cls')
-        case 'B':
-            try:
-                os.remove("relatorio.csv")
-            finally:
-                infos()
+        match op:
+            case 'A':
+                inscricao()
+                os.system('cls')
+            case 'B':
+                try:
+                    os.remove("relatorio.csv")
+                except:
+                    continue
+                finally:
+                    infos()
 
 #assegurar que os dados sempre serao gravados ao sair
 try: 
