@@ -26,12 +26,12 @@ void pop(no **topo) {
 }
 
 int main() {
-    no *pilha = NULL, *remover = NULL;
-    int i = 0, pares = 0, testes;
+    no *pilha = NULL;
+    int i = 0, pares = 0, n;
 
-    scanf("%d", &testes);
+    scanf("%d", &n);
 
-    for (int run = 0; run < testes; run++) {
+    for (int run = 0; run < n; run++) {
         fflush(stdin);
         std::string input;
         std::cin >> input;
