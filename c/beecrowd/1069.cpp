@@ -27,7 +27,7 @@ void pop(no **topo) {
 
 int main() {
     no *pilha = NULL;
-    int i = 0, pares = 0, n;
+    int pares = 0, n;
 
     scanf("%d", &n);
 
@@ -35,7 +35,6 @@ int main() {
         fflush(stdin);
         std::string input;
         std::cin >> input;
-        i = 0;
 
         for (auto input : input) {
             if (input == '<') {

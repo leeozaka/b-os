@@ -7,6 +7,7 @@
             "args": [
                 "-Wall",
                 "-Wextra",
+                "-O3",
                 "-g",
                 "${file}",
                 "-o",
