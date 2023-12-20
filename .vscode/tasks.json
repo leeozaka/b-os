@@ -5,13 +5,14 @@
             "label": "C/C++: gcc.exe build active file",
             "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
             "args": [
-                "-Wall",
-                "-Wextra",
-                "-O3",
                 "-g",
                 "${file}",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-g3",
+                "-O3",
+                "-Wall",
+                "-Wextra",
                 "-lc"
             ],
             "options": {
