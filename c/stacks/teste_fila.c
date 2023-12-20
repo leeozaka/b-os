@@ -35,7 +35,7 @@ void remove_fila(no** fila) {
         *fila = remove->prox;
         free(remove);
     }
- }   
+}
 
 int main() {
     no* fila = NULL;
@@ -47,15 +47,20 @@ int main() {
 
     no* aux = fila;
     while (aux) {
-        printf("%d -> ", aux->num);
+        printf("%d", aux->num);
+        printf("%s", aux->prox ? " -> " : ".");
         aux = aux->prox;
     }
     printf("\n\n");
 
     remove_fila(&fila);
+    remove_fila(&fila);
+    remove_fila(&fila);
+
     aux = fila;
     while (aux) {
-        printf("%d -> ", aux->num);
+        printf("%d", aux->num);
+        printf("%s", aux->prox ? " -> " : ".");
         aux = aux->prox;
     }
 }
