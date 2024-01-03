@@ -4,9 +4,9 @@
 
 #define N 26
 
-typedef struct TrieNode TrieNode;
+typedef struct TrieNode TrieNode
 
-struct TrieNode {
+    struct TrieNode {
   int quant;
   TrieNode *children[N];
 };
